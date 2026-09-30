@@ -41,9 +41,15 @@ console.log(`listening on port ${port}`);
 //     res.render("insta.ejs" , {username});
 // })
 
-app.get("/ig/:username",(req,res)=>{
-    const followers = ["nadye","aman","rahul","adam","steve"];
-    let {username} = req.params;
+// app.get("/ig/:username",(req,res)=>{
+//     const followers = ["nadye","aman","rahul","adam","steve"];
+//     let {username} = req.params;
     
-    res.render("insta.ejs" , {username , followers});
+//     res.render("insta.ejs" , {username , followers});
+// })
+
+app.get("/ig/:username",(req,res)=>{
+    const instaData = require("./data.json");
+    console.log(instaData);
+    res.render("insta.ejs" );
 })
